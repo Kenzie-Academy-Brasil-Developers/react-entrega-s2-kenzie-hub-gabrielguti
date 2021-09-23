@@ -2,12 +2,12 @@ import "./stylesRegister.css";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { TextField } from "@material-ui/core";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 
-const Register = () => {
+const Register = ({authenticated}) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -53,6 +53,10 @@ const Register = () => {
         toast.error("Tente outro email");
       });
   };
+
+  if(authenticated){
+    return <Redirect to = '/dashboard'/>
+  }
 
   return (
     <div className="contentBox">

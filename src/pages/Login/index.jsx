@@ -2,12 +2,12 @@ import "./stylesLogin.css";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { TextField } from "@material-ui/core";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 
-const Login = () => {
+const Login = ({ authenticated, setAuthenticated }) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -26,19 +26,25 @@ const Login = () => {
     resolver: yupResolver(schema),
   });
 
-  const handleNewUser = ({ email, password }) => {
-    const user = { email, password };
-
+  const handleNewUser = (data) => {
     api
-      .post("/users", user)
-      .then((_) => {
+      .post("/sessions", data)
+      .then((response) => {
+        const { token } = response.data;
+
+        localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
+        localStorage.setItem("@user:userEmail", JSON.stringify(data.email));
         toast.success("Sucesso ao entrar");
+        setAuthenticated(true);
         return history.push("/dashboard");
       })
       .catch((err) => {
         toast.error("Conta inválida");
       });
   };
+  if (authenticated) {
+    <Redirect to="/dashboard" />;
+  }
 
   return (
     <div className="contentBox">
