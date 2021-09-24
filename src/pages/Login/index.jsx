@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 
 const Login = ({ authenticated, setAuthenticated }) => {
   const history = useHistory();
-
   const schema = yup.object().shape({
     email: yup.string().required("Email obrigatório").email("Email inválido"),
     password: yup
@@ -31,10 +30,12 @@ const Login = ({ authenticated, setAuthenticated }) => {
       .post("/sessions", data)
       .then((response) => {
         const { token } = response.data;
-
+         
+        localStorage.setItem('@user:Techs', JSON.stringify(response.data.user.techs))
         localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
         localStorage.setItem("@user:userEmail", JSON.stringify(data.email));
         toast.success("Sucesso ao entrar");
+        
         setAuthenticated(true);
         return history.push("/dashboard");
       })
@@ -45,7 +46,6 @@ const Login = ({ authenticated, setAuthenticated }) => {
   if (authenticated) {
     <Redirect to="/dashboard" />;
   }
-
   return (
     <div className="contentBox">
       <div className="boxImageLogin"></div>

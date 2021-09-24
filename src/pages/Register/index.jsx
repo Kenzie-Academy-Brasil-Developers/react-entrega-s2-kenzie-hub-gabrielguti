@@ -7,7 +7,7 @@ import { TextField } from "@material-ui/core";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 
-const Register = ({authenticated}) => {
+const Register = ({ authenticated }) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -54,8 +54,8 @@ const Register = ({authenticated}) => {
       });
   };
 
-  if(authenticated){
-    return <Redirect to = '/dashboard'/>
+  if (authenticated) {
+    return <Redirect to="/dashboard" />;
   }
 
   return (

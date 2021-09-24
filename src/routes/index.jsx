@@ -33,6 +33,7 @@ const Routes = () => {
             <Route path = '/dashboard'>
                 <Dashboard 
                 authenticated = {authenticated}
+                setAuthenticated = {setAuthenticated}
                 />
             </Route>
         </Switch>
