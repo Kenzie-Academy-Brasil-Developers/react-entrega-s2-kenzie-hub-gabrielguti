@@ -7,7 +7,7 @@ function App() {
     <div className="container">
       <GlobalStyle />
       <ToastContainer
-        position="top-right"
+        position="top-left"
         autoClose={1500}
         hideProgressBar={false}
         newestOnTop={false}
@@ -16,6 +16,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        className = 'toast'
       />
       <Routes />
     </div>

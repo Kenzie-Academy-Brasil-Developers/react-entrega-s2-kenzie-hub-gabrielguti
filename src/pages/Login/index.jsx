@@ -30,12 +30,15 @@ const Login = ({ authenticated, setAuthenticated }) => {
       .post("/sessions", data)
       .then((response) => {
         const { token } = response.data;
-         
-        localStorage.setItem('@user:Techs', JSON.stringify(response.data.user.techs))
+
+        localStorage.setItem(
+          "@user:Techs",
+          JSON.stringify(response.data.user.techs)
+        );
         localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
         localStorage.setItem("@user:userEmail", JSON.stringify(data.email));
         toast.success("Sucesso ao entrar");
-        
+
         setAuthenticated(true);
         return history.push("/dashboard");
       })
@@ -57,7 +60,6 @@ const Login = ({ authenticated, setAuthenticated }) => {
             type="text"
             id="outlined-basicEmail"
             label="Email"
-            color="secondary"
             helperText={errors.email?.message}
             {...register("email")}
           />
@@ -66,7 +68,6 @@ const Login = ({ authenticated, setAuthenticated }) => {
             type="password"
             id="outlined-basicPassword"
             label="Senha"
-            color="secondary"
             helperText={errors.password?.message}
             {...register("password")}
           />

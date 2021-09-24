@@ -69,7 +69,6 @@ const Register = ({ authenticated }) => {
             type="text"
             id="outlined-basicName"
             label="Nome"
-            color="secondary"
             helperText={errors.name?.message}
             {...register("name")}
           />
@@ -77,7 +76,6 @@ const Register = ({ authenticated }) => {
             type="text"
             id="outlined-basicEmail"
             label="Email"
-            color="secondary"
             helperText={errors.email?.message}
             {...register("email")}
           />
@@ -85,7 +83,6 @@ const Register = ({ authenticated }) => {
             type="text"
             id="outlined-basicBio"
             label="Bio"
-            color="secondary"
             helperText={errors.bio?.message}
             {...register("bio")}
           />
@@ -93,7 +90,6 @@ const Register = ({ authenticated }) => {
             type="number"
             id="outlined-basicContact"
             label="Contact"
-            color="secondary"
             helperText={errors.contact?.message}
             {...register("contact")}
           />
@@ -101,7 +97,6 @@ const Register = ({ authenticated }) => {
             type="text"
             id="outlined-basicModule"
             label="Módulo do Curso"
-            color="secondary"
             helperText={errors.course_module?.message}
             {...register("course_module")}
           />
@@ -109,7 +104,6 @@ const Register = ({ authenticated }) => {
             type="password"
             id="outlined-basicPassword"
             label="Senha"
-            color="secondary"
             helperText={errors.password?.message}
             {...register("password")}
           />
@@ -117,7 +111,6 @@ const Register = ({ authenticated }) => {
             type="password"
             id="outlined-basicPassConfirm"
             label="Confirme sua senha"
-            color="secondary"
             helperText={errors.passwordConfirm?.message}
             {...register("passwordConfirm")}
           />

@@ -47,7 +47,8 @@ const Card = ({ techs, setTechs }) => {
           {techs.map((item, index) => (
             <div key={item.id} className="Card">
               <>
-                {item.title} {item.status}
+                <p id = 'title'>{item.title}</p> 
+               <p id = 'status'>{item.status}</p> 
               </>
               <button
                 id="garbage"

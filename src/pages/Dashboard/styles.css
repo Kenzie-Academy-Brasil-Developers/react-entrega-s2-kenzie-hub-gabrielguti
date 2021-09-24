@@ -1,67 +1,107 @@
-.containerDashboard{
-    height: 100vh;
-    width: 100vw;
-
+.containerDashboard {
+  height: 100vh;
+  width: 100vw;
 }
-.headerUser{
-    height: 15vh;
-    width: 250px;
-    background-color:rgba(255, 255, 255, 0.301);
-    border-radius: 5px;
-    margin-top: 3vh;
-    padding: 5px;
-    float: right;
-    text-align: center;
+.headerUser {
+  height: 12vh;
+  width: 170px;
+  background-color: rgba(255, 255, 255, 0.301);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin-top: 3vh;
+  margin-right: 0;
+  padding: 5px;
+  float: right;
+  text-align: center;
 }
-.headerUser span{
-    font-size: 0.8em;
+.headerUser button {
+  padding: 2px;
 }
-.searchCamp{
-    margin-top: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.headerUser span {
+  font-size: 0.8em;
 }
-.inputsSideBySide{
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    height: 10vh;
-    width: 50%;
+.searchCamp {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  visibility: hidden;
+  display: none;
+}
+.inputsSideBySide {
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  height: 10vh;
+  width: 50%;
+  margin-bottom: 2vh;
 }
 .inputsSideBySide input {
-    height: 5vh;
-    margin-right: 2vw;
-    border-radius: 5px;
-    border: 0;
+  height: 5vh;
+  margin-right: 2vw;
+  border-radius: 5px;
+  margin-bottom: 1vh;
+  padding: 5px;
+  border: 0;
 }
-.inputsSideBySide button{
+.inputsSideBySide button {
+  margin-top: 2vh;
+  padding: 5px;
+  height: 5vh;
+}
+
+.techAdded {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  box-shadow: 0px 0px 12px white;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  border-radius: 5px;
+}
+.techAdded h2 {
+  margin-left: 2vw;
+  text-align: center;
+  margin-top: 1vh;
+}
+.techCards {
+  height: 80%;
+  width: 100%;
+  margin-top: 3vh;
+}
+
+@media screen and (min-width: 668px) {
+  h1 {
+    visibility: visible;
+    display: inline;
+    text-align: center;
+  }
+  .inputsSideBySide {
+    flex-direction: row;
+    width: 80%;
+  }
+  .inputsSideBySide button {
     margin: 0;
     padding: 0;
-    height: 5vh;
-
-}
-
-.techAdded{
-        display: flex;
-    flex-direction: column;
-    height: 50vh;
-    box-shadow: 0px 0px 8px;
-    margin-left: 2vw;
+    width: 100px;
+  }
+  .inputsSideBySide input {
+    margin: 0;
     margin-right: 2vw;
-    border-radius: 5px;
-}
-.techAdded h2{
-    margin-left: 2vw;
-}
-.techCards{
-    height: 80%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  }
+  .Card {
+    margin-right: 2vw;
+  }
+  .headerUser {
+    width: 250px;
+  }
+  .headerUser button {
+    padding: 5px;
+  }
 }
