@@ -13,6 +13,10 @@
   padding: 5px;
   float: right;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .headerUser button {
   padding: 2px;
@@ -64,6 +68,7 @@ h1 {
   margin-left: 2vw;
   margin-right: 2vw;
   border-radius: 5px;
+  min-height: 45vh;
 }
 .techAdded h2 {
   margin-left: 2vw;
@@ -100,6 +105,7 @@ h1 {
   }
   .headerUser {
     width: 250px;
+    height: 14vh;
   }
   .headerUser button {
     padding: 5px;
